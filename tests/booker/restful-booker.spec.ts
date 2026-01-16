@@ -10,7 +10,7 @@ test.beforeAll(async () => {
     apiContext = await getApiContext();
 });
 
-test('Creates a new auth token to use for access to the PUT and DELETE /booking @token', async () => {
+test('Creates a new auth token to use for access to the PUT and DELETE /booking @token @smoke', async () => {
     const userData = {
         username: 'admin',
         password: 'password123',
@@ -33,13 +33,10 @@ test('Creates a new auth token to use for access to the PUT and DELETE /booking 
     expect(responseBody, requestInfo).toHaveProperty('token');
 });
 
-test.only('GET all booking IDs', async () => {
+test.only('GET all booking IDs @smoke', async () => {
     const response = await apiContext.get('/booking');
-
     expect(response.status()).toBe(200);
-
     const responseBody = await response.json();
-
     const requestInfo = '\nPOST: ' + response.url() + '\nResponse Body: ' + JSON.stringify(response);
 
     expect(Array.isArray(responseBody), requestInfo).toBe(true);
