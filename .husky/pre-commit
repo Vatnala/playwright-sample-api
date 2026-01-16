@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# esure this file having the executable permission
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm exec lint-staged
