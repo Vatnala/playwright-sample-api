@@ -39,7 +39,7 @@ jobs:
 
       # Run Playwright API tests
       - name: Run API tests
-        run: npx playwright test
+        run: npx cross-env playwright test
         env:
           test_env: dev
 
