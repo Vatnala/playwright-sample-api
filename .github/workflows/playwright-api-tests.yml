@@ -37,13 +37,13 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      # 6️⃣ Run Playwright API tests
+      # Run Playwright API tests
       - name: Run API tests
         run: npx playwright test
         env:
           test_env: dev
 
-      # 7️⃣ Upload Playwright HTML report (always)
+      # Upload Playwright HTML report (always)
       - name: Upload Playwright Report
         if: always()
         uses: actions/upload-artifact@v4
